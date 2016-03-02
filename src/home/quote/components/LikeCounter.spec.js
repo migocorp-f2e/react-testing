@@ -1,9 +1,10 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import expect from 'expect';
-import expectJSX from 'expect-jsx';
-expect.extend(expectJSX);
+import chai, {expect} from 'chai';
+import jsxChai from 'jsx-chai'
 import LikeCounter from './LikeCounter';
+
+chai.use(jsxChai)
 
 describe('LikeCounter', () => {
 
@@ -12,7 +13,7 @@ describe('LikeCounter', () => {
     renderer.render(<LikeCounter count={5} />);
     const actual = renderer.getRenderOutput().type
     const expected = 'a';
-    expect(actual).toEqual(expected);
+    expect(actual).to.equal(expected);
   });
 
   it('should render like counts', () => {
@@ -20,7 +21,7 @@ describe('LikeCounter', () => {
     renderer.render(<LikeCounter count={5} />);
     const actual = renderer.getRenderOutput();
     const expected = '5 likes';
-    expect(actual).toIncludeJSX(expected);
+    expect(actual).to.include(expected);
   });
 
   describe('isActive', () => {
@@ -32,11 +33,11 @@ describe('LikeCounter', () => {
     }
 
     it('should show the like count as active', () => {
-      expect(renderLikeCounter(true)).toEqual(true);
+      expect(renderLikeCounter(true)).to.equal(true);
     });
 
     it('should show the like count as inactive', () => {
-      expect(renderLikeCounter(false)).toEqual(false);
+      expect(renderLikeCounter(false)).to.equal(false);
     });
   });
 });

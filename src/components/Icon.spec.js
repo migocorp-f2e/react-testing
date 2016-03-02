@@ -1,6 +1,6 @@
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
-import expect from 'expect';
+import {expect} from 'chai';
 import Icon from './Icon';
 
 describe('Icon', () => {
@@ -11,6 +11,6 @@ describe('Icon', () => {
     renderer.getRenderOutput();
     const actual = renderer.getRenderOutput().props.className.includes('facebook');
     const expected = true;
-    expect(actual).toEqual(expected);
+    expect(actual).to.equal(expected);
   });
 });

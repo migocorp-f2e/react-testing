@@ -1,4 +1,4 @@
-import expect from 'expect';
+import {expect} from 'chai';
 import {updateThemeColor} from './themeActionCreators';
 import themeReducer from './themeReducer';
 
@@ -18,6 +18,6 @@ describe('themeReducer', () => {
     const expected = {
       color: '#B38EAE'
     };
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 });

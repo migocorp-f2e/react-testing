@@ -1,4 +1,4 @@
-import expect from 'expect';
+import {expect} from 'chai';
 import {ADD_QUOTE_BY_ID, REMOVE_QUOTE_BY_ID, LIKE_QUOTE_BY_ID, UNLIKE_QUOTE_BY_ID} from '../../../state/ActionTypes';
 import {addQuoteById, removeQuoteById, likeQuoteById, unlikeQuoteById} from './quoteActionCreators';
 
@@ -18,7 +18,8 @@ describe('quoteActionCreators', () => {
         type: ADD_QUOTE_BY_ID,
         payload
       };
-      expect(actual).toEqual(expected);
+      console.log('actualddd', actual);
+      expect(actual).to.deep.equal(expected);
     });
   });
 
@@ -33,7 +34,7 @@ describe('quoteActionCreators', () => {
         type: REMOVE_QUOTE_BY_ID,
         payload
       };
-      expect(actual).toEqual(expected);
+      expect(actual).to.deep.equal(expected);
     });
   });
 
@@ -48,7 +49,7 @@ describe('quoteActionCreators', () => {
         type: LIKE_QUOTE_BY_ID,
         payload
       };
-      expect(actual).toEqual(expected);
+      expect(actual).to.deep.equal(expected);
     });
   });
 
@@ -63,7 +64,7 @@ describe('quoteActionCreators', () => {
         type: UNLIKE_QUOTE_BY_ID,
         payload
       };
-      expect(actual).toEqual(expected);
+      expect(actual).to.deep.equal(expected);
     });
   });
 });

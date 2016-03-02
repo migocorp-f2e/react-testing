@@ -1,4 +1,4 @@
-import expect from 'expect';
+import {expect} from 'chai';
 import {UPDATE_THEME_COLOR} from '../../../state/ActionTypes';
 import {updateThemeColor} from './themeActionCreators';
 
@@ -15,7 +15,7 @@ describe('themeActionCreators', () => {
         type: UPDATE_THEME_COLOR,
         payload
       };
-      expect(actual).toEqual(expected);
+      expect(actual).to.deep.equal(expected);
     });
   });
 });

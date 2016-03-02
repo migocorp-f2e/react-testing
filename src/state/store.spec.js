@@ -1,4 +1,4 @@
-import expect from 'expect';
+import {expect} from 'chai';
 import {store} from './store';
 
 describe('store', () => {
@@ -11,7 +11,7 @@ describe('store', () => {
         color: '#5DC4C6'
       }
     };
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should work with a series of actions', () => {
@@ -74,6 +74,6 @@ describe('store', () => {
       }
     };
 
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 });

@@ -1,4 +1,4 @@
-import expect from 'expect';
+import {expect} from 'chai';
 import {addQuoteById, removeQuoteById, likeQuoteById, unlikeQuoteById} from './quoteActionCreators';
 import quoteReducer from './quoteReducer';
 
@@ -49,7 +49,7 @@ describe('quoteReducer', () => {
         likeCount: 0
       }
     ];
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should remove quotes by id', () => {
@@ -65,7 +65,7 @@ describe('quoteReducer', () => {
         likeCount: 0
       }
     ];
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should return prevous state when trying to remove quote with a non-existant id', () => {
@@ -74,7 +74,7 @@ describe('quoteReducer', () => {
     });
     const actual = quoteReducer(stateBefore(), action);
     const expected = stateBefore();
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should increase quote like count by id', () => {
@@ -96,7 +96,7 @@ describe('quoteReducer', () => {
         likeCount: 1
       }
     ];
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should decrease quote like count by id', () => {
@@ -118,7 +118,7 @@ describe('quoteReducer', () => {
         likeCount: 0
       }
     ];
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should return previous state when trying to make a quote like count negative', () => {
@@ -127,7 +127,7 @@ describe('quoteReducer', () => {
     });
     const actual = quoteReducer(stateBefore(), action);
     const expected = stateBefore();
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 
   it('should return prevous state when trying to change the like count on a quote with a non-existant id', () => {
@@ -136,6 +136,6 @@ describe('quoteReducer', () => {
     });
     const actual = quoteReducer(stateBefore(), action);
     const expected = stateBefore();
-    expect(actual).toEqual(expected);
+    expect(actual).to.deep.equal(expected);
   });
 });
