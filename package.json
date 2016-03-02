@@ -1,0 +1,42 @@
+{
+  "name": "react-testing",
+  "version": "1.0.0",
+  "description": "react testing practice",
+  "repository": {
+    "type": "git",
+    "url": "git+hhttps://github.com/migocorp-f2e/react-testing.git"
+  },
+  "author": "Lai Chia Sheng <jason0911520@gmail.com> (http://github.com/groupystinks)",
+  "main": "./src/index",
+  "scripts": {
+    "test": "mocha './src/**/*.spec.js' --compilers js:babel-core/register",
+    "test:watch": "npm test -- --watch",
+    "serve": "webpack-dev-server --content-base dist/ --no-info",
+    "dev": "parallelshell 'npm run test:watch' 'npm run serve'"
+  },
+  "dependencies": {
+    "classnames": "2.2.1",
+    "react": "0.14.3",
+    "react-colors-picker": "2.2.1",
+    "react-dom": "0.14.3",
+    "react-redux": "3.1.0",
+    "redux": "3.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "6.1.4",
+    "babel-loader": "6.1.0",
+    "babel-preset-es2015": "6.1.4",
+    "babel-preset-react": "6.1.4",
+    "babel-preset-stage-2": "6.1.2",
+    "css-loader": "0.23.0",
+    "expect": "1.12.2",
+    "expect-jsx": "2.1.2",
+    "file-loader": "0.8.4",
+    "mocha": "2.3.3",
+    "parallelshell": "2.0.0",
+    "react-addons-test-utils": "0.14.3",
+    "style-loader": "0.13.0",
+    "webpack": "1.12.2",
+    "webpack-dev-server": "1.12.0"
+  }
+}
